@@ -1,1 +1,18 @@
-print("RFK sucks lol")
+from tkinter import *
+from tkinter import ttk
+
+GUI = Tk()
+GUI.title("NASCAR Database")
+
+
+mainframe = Frame(GUI, height = 400, width = 500)
+mainframe.pack_propagate(0)
+mainframe.pack(padx = 5, pady = 5)
+
+Title = ttk.Label(mainframe, text = """NASCAR Database""")
+Title.pack(side = TOP)
+
+driver = ttk.Button(mainframe, text = """Drivers""")
+driver.pack()
+schedule = ttk.Button(mainframe, text= """Season Schedule""")
+schedule.pack()
