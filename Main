@@ -24,7 +24,8 @@ GUI.config(menu=menubar)
 
 file_menu = Menu(menubar, tearoff=0)
 
-file_menu.add_command(label='Are you sure?', command=GUI.destroy)
+file_menu.add_command(label='are your sure?')
+file_menu.add_command(label='yes', command=GUI.destroy)
 menubar.add_cascade(label="Exit", menu=file_menu)
 
 def Navdriver():
@@ -32,7 +33,7 @@ def Navdriver():
 
 #Menu Buttons
 
-driver = Button(mainframe, text = """Drivers""", font=('Gill Sans',   20), padx=80, pady=20)
+driver = Button(mainframe, text = """Drivers""", font=('Gill Sans',   20), padx=80, pady=20, command=Navdriver)
 driver.pack()
 
 schedule = Button(mainframe, text= """Season Schedule""", font=('Gill Sans', 20), padx=50, pady=20)
