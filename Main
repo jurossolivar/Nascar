@@ -30,17 +30,78 @@ menubar.add_cascade(label="Exit", menu=file_menu)
 
 def Navdriver():
   print("drivers")
+  mainframe.pack_forget()
+
+
+def NavSched():
+    print("schedule")
+    mainframe.pack_forget()
+    GUI.geometry("1545x900")
+    GUI.config(bg='black')
+
+    ScheduleTitle = Label(GUI, text = """Season Schedule""",fg='white',bg='black')
+    ScheduleTitle.config(font=('Gill Sans', 24))
+    ScheduleTitle.grid(row=0, column=3)
+
+    file_menu.destroy()
+    schedexit = Menu(menubar, tearoff=1)
+    schedexit.add_command(label="return to main menu?")
+    menubar.add_cascade(label="Return", menu=schedexit)
+
+    daytona1 = Button(GUI, text = """1. Daytona""", font=('Gill Sans',   20), padx=40, pady=5)
+    daytona1.grid(row=1, column=1, sticky=NSEW)
+
+    fontana = Button(GUI, text = """2. Auto Club""", font=('Gill Sans',   20), padx=40, pady=5)
+    fontana.grid(row=1, column=2, sticky=NSEW)
+
+    vegas1 = Button(GUI, text = """3. Las Vegas""", font=('Gill Sans',   20), padx=40, pady=5)
+    vegas1.grid(row=1, column=3, sticky=NSEW)
+
+    phoenix1 = Button(GUI, text = """4. Phoenix""", font=('Gill Sans',   20), padx=40, pady=5)
+    phoenix1.grid(row=1, column=4, sticky=NSEW)
+
+    atlanta1 = Button(GUI, text = """5. Atlanta""", font=('Gill Sans',   20), padx=40, pady=5)
+    atlanta1.grid(row=1, column=5, sticky=NSEW)
+
+    COTA = Button(GUI, text = """6. COTA""", font=('Gill Sans',   20), padx=40, pady=5)
+    COTA.grid(row=1, column=6, sticky=NSEW)
+
+    richmond1 = Button(GUI, text = """7. Richmond""", font=('Gill Sans',   20), padx=40, pady=5)
+    richmond1.grid(row=2, column=1, sticky=NSEW)
+
+    mtville1 = Button(GUI, text = """8. Martinsville""", font=('Gill Sans',   20), padx=40, pady=5)
+    mtville1.grid(row=2, column=2, sticky=NSEW)
+
+    bristol1 = Button(GUI, text = """9. Bristol""", font=('Gill Sans',   20), padx=40, pady=5)
+    bristol1.grid(row=2, column=3, sticky=NSEW)
+
+    dega1 = Button(GUI, text = """10. Talladega""", font=('Gill Sans',   20), padx=40, pady=5)
+    dega1.grid(row=2, column=4, sticky=NSEW)
+
+    dover = Button(GUI, text = """11. Dover""", font=('Gill Sans',   20), padx=40, pady=5)
+    dover.grid(row=2, column=5, sticky=NSEW)
+
+    darling1 = Button(GUI, text = """12. Darlington""", font=('Gill Sans',   20), padx=40, pady=5)
+    darling1.grid(row=2, column=6, sticky=NSEW)
+
+    kansas1 = Button(GUI, text = """13. Kansas""", font=('Gill Sans',   20), padx=40, pady=5)
+    kansas1.grid(row=3, column=1, sticky=NSEW)
+
+
+def NavStand():
+  print("Standings")
 
 #Menu Buttons
 
 driver = Button(mainframe, text = """Drivers""", font=('Gill Sans',   20), padx=80, pady=20, command=Navdriver)
 driver.pack()
 
-schedule = Button(mainframe, text= """Season Schedule""", font=('Gill Sans', 20), padx=50, pady=20)
+schedule = Button(mainframe, text= """Season Schedule""", font=('Gill Sans', 20), padx=50, pady=20, command=NavSched)
 schedule.pack()
 
-standings = Button(mainframe, text= """Season Standings""", font=('Gill Sans', 20), padx=48, pady=20)
+standings = Button(mainframe, text= """Season Standings""", font=('Gill Sans', 20), padx=48, pady=20, command=NavStand)
 standings.pack()
 
 GUI.mainloop()
+
 
